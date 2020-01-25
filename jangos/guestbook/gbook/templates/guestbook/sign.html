@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+    body{
+        background:#303;
+    }
+        #cont{
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:10%;
+            border: 0.5px #777777 solid;
+            padding: 5px;
+            box-shadow: 2px 2px grey;
+            border-radius: 10px;
+            background:white;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="container" id="cont">
+    <form  class="form-group" action="{% url 'sign'%}" method="POST">
+    {% csrf_token %}
+        <label for="name">Name</label>
+        {{form.name}}
+        <label for="message">Message</label>
+        {{form.comment}}
+        <input type="submit" class="btn btn-primary"  style="margin-top: 3%; margin-left:40%">
+    </form>
+   </div>
+</body>
+</html>

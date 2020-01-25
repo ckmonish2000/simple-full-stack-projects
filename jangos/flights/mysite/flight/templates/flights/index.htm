@@ -10,7 +10,7 @@
   <h1>hello this is flights</h1> 
   <ul>
 {%for x in flights%}
-<li>{{x}}</li>
+<a href="{% url 'flight' x.id %}"><li>{{x}}</li></a>
 
 {%endfor%}
   </ul>

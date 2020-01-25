@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GuestBook</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        #cont{
+            margin:30px;
+            
+            padding: 10px;
+            border-radius: 20px;
+            
+
+        }
+        a{
+            text-decoration: none;
+            color: #123458;
+               }
+      a:hover{
+          box-shadow: 3px 3px  #789;;
+          transition: 0.3s;
+          text-decoration: none;
+          color: #279;
+          padding: 2px;
+      } 
+      #conts{
+        margin:30px;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 3px 3px 2px 2px rgb(122, 51, 51);
+        
+      }
+    </style>
+</head>
+<body>
+<div class="container" id="conts" style="box-shadow: 3px 3px 2px 2px #789;">
+    <h1 class="heading">GuestBook</h1>
+    <br>
+    <a href="{% url 'sign' %}">Sign Into GuestBook</a>
+</div>
+
+<div class="container" id="cont" >
+    <h1>Names Of Guest</h1>
+</div>
+{% for x in data %}
+<div class="container" id="conts">
+    <h4>Author:{{x.name}}</h4>
+    <blockquote>
+        <p>{{x.comment}}</p>
+    </blockquote>
+    </div>
+{% endfor %}
+</body>
+</html>
